@@ -1,6 +1,6 @@
 import StatsCard from "components/StatsCard";
-import Link from "next/link";
 import ReactEcharts from "echarts-for-react";
+import BoardTable from "components/BoardTable";
 const Overview = () => {
 
     // chart options that will be passed to the chart component 
@@ -101,56 +101,26 @@ const Overview = () => {
 
             {/* the tables section */}
             <section className="tables container  md:flex  gap-6">
-                {/* the last events table */}
-                <div className="basic-table bg-white md:w-1/2 mb-8 md:mb-0 rounded-lg">
-                    <div className="table-head mb-3 flex justify-between p-4 items-center">
-                            <h2 className="text-xl md:text-2xl font-bold">Last events</h2>
-                        <Link className="all-link" href="#">
-                        <p className="text-sm font-semibold ">View all</p>
-                        </Link>
-                    </div>
-                    <div className="table-item flex justify-between p-4 border-b-2">
-                        <p className=" text-sm font-semibold ">DevFest</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">pending</p>
-                    </div>
-                    <div className="table-item flex justify-between p-4 border-b-2">
-                        <p className=" text-sm font-semibold ">DesignFest</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">Done</p>
-                    </div>
-                    <div className="table-item flex justify-between p-4 border-b-2">
-                        <p className=" text-sm font-semibold ">IWD</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">Done</p>
-                    </div>
-                    <div className="table-item flex justify-between p-4">
-                        <p className=" text-sm font-semibold ">Pending</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">pending</p>
-                    </div>
-                </div>
-                {/* the members leaderboard table */}
-                <div className="basic-table bg-white md:w-1/2 rounded-lg">
-                    <div className="table-head mb-3 flex justify-between  items-center p-4">
-                        <h2 className=" text-xl md:text-2xl font-bold">Members Leaderboard</h2>
-                        <Link className="all-link" href="#">
-                        <p className="text-sm font-semibold ">View all</p>
-                        </Link>
-                    </div>
-                    <div className="table-item flex justify-between p-4 border-b-2">
-                        <p className=" text-sm font-semibold ">Abdessamed Rezzazi</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">220 contributions</p>
-                    </div>
-                    <div className="table-item flex justify-between p-4 border-b-2">
-                        <p className=" text-sm font-semibold ">Islem Medhjahdi</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">220 contributions</p>
-                    </div>
-                    <div className="table-item flex justify-between p-4 border-b-2">
-                        <p className=" text-sm font-semibold ">Nada Hanad</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">220 contributions</p>
-                    </div>
-                    <div className="table-item flex justify-between p-4">
-                        <p className=" text-sm font-semibold ">Aness Zeredg</p>
-                        <p className=" text-sm font-semibold  text-gray-300 ">p220 contributions</p>
-                    </div>
-                </div>
+            <BoardTable
+            title="Last events"
+            data={[
+                { name: "DevFest", status: "pending" },
+                { name: "DesignFest", status: "Done" },
+                { name: "IWD", status: "Done" },
+                { name: "Pending", status: "pending" }
+            ]}
+            viewAllHref="#"
+            />
+            <BoardTable
+            title="Members Leaderboard"
+            data={[
+                { name: "Abdessamed Rezzazi", status: "220 contributions" },
+                { name: "Islem Medhjahdi", status: "220 contributions" },
+                { name: "Nada Hanad", status: "220 contributions" },
+                { name: "Aness Zeredg", status: "220 contributions" }
+            ]}
+            viewAllHref="#"
+            />
             </section>
 
         </main>
