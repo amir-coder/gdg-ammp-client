@@ -13,7 +13,7 @@ const BoardTable = ({ title, data, viewAllHref }) => {
         )}
       </div>
       {data.map((item, index) => (
-        <div
+        <div key={item.name}
           className={`table-item flex justify-between p-4 ${
             index !== data.length - 1 ? "border-b-2" : ""
           }`}

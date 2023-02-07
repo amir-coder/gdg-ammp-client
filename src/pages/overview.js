@@ -1,61 +1,15 @@
 import StatsCard from "components/StatsCard";
-import ReactEcharts from "echarts-for-react";
+import LineChart from "components/LineChart";
 import BoardTable from "components/BoardTable";
 const Overview = () => {
 
-    // chart options that will be passed to the chart component 
-    const option = {
-        // add a color palette to the chart using colors in global.scss
-        color: ['rgba(55, 81, 255, 1)','rgba(223, 224, 235, 1)'],
-        title: {
-          text: 'Active Members'
-        },
-        tooltip: {
-          trigger: 'axis'
-        },
-        legend: {
-          data: ['this year', 'last year'],
-            right: '1%',
-            top: '5%',
-            
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22']
-},
-        yAxis: {
-          type: 'value'
-        },
-        series: [
-          {
-            name: 'this year',
-            type: 'line',
-            stack: 'Total',
-            data: [120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230, 210, 120 ],
-            smooth: true,
-            symbol: 'none',
-          },
-        
-          {
-            name: 'last year',
-            type: 'line',
-            stack: 'Total',
-            data: [220, 182, 191, 234, 290, 330, 310, 220, 182, 191, 234, 290, 330, 310, 220, 182, 191, 234, 290, 330, 310, 220] ,
-            smooth: true,
-            symbol: 'none',
-          },
-          
-        ]
-      };
-                              
+              
+const chartData= {
+  xAxis:['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'],
+  thisYear: [120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230, 210, 120],
+  lastYear: [220, 182, 191, 234, 290, 330, 310, 220, 182, 191, 234, 290, 330, 310, 220, 182, 191, 234, 290, 330, 310, 220]
+  }
+
                 
     return ( 
         <main className="p-8">
@@ -72,7 +26,8 @@ const Overview = () => {
             <section className=" my-8 container divide-x-0 md:divide-x-2 divide-y-2 md:divide-y-0 md:flex rounded-lg overflow-hidden ">
                 {/* the chart */}
                 <div className="chart bg-white  md:w-3/4" >
-                    <ReactEcharts option={option}  />
+                    {/* <ReactEcharts option={option}  /> */}
+                    <LineChart data={chartData}/>
                 </div>
                 {/* the stats cards */}
                 <aside className="  md:flex-col md:w-1/4 ">
