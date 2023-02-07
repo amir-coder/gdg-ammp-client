@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ellipse_signin_1{
+    position: fixed;
+    width: 600px;
+    height: 650px;
+    left: -5vw;
+    top: 40vh;
+    z-index: 0;
+    border-radius: 75%;
+    background: #264ECA;
+}
+
+.ellipse_signin_2{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    left: -7vw;
+    top: 70vh;
+    z-index: 1;
+    border-radius: 100%;
+    background: #244BC5;
+}
