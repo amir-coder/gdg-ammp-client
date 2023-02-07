@@ -9,7 +9,7 @@
   --dark-text:rgba(37, 39, 51, 1);
   --purple-blue:rgba(55, 81, 255, 1);
   --blue:rgba(33, 72, 192, 1);
-
+  --light-gray:rgba(223, 224, 235, 1)
 }
 
 *{
@@ -52,10 +52,15 @@ body {
 
 
 .echarts-for-react{
-  height: 100% !important;
+  height: 432px !important;
   padding: 24px !important;
 } 
 
+
+
 .all-link{
   color: var(--purple-blue)
+}
+.all-link:hover{
+  color: var(--blue)
 }

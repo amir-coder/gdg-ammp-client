@@ -3,7 +3,7 @@ import Link from "next/link";
 import ReactEcharts from "echarts-for-react";
 const Overview = () => {
 
-
+    // chart options that will be passed to the chart component 
     const option = {
         // add a color palette to the chart using colors in global.scss
         color: ['rgba(55, 81, 255, 1)','rgba(223, 224, 235, 1)'],
@@ -15,7 +15,8 @@ const Overview = () => {
         },
         legend: {
           data: ['this year', 'last year'],
-            right: '4%',
+            right: '1%',
+            top: '5%',
             
         },
         grid: {
@@ -39,14 +40,17 @@ const Overview = () => {
             type: 'line',
             stack: 'Total',
             data: [120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230, 210, 120 ],
-            smooth: true
+            smooth: true,
+            symbol: 'none',
           },
+        
           {
             name: 'last year',
             type: 'line',
             stack: 'Total',
             data: [220, 182, 191, 234, 290, 330, 310, 220, 182, 191, 234, 290, 330, 310, 220, 182, 191, 234, 290, 330, 310, 220] ,
-            smooth: true 
+            smooth: true,
+            symbol: 'none',
           },
           
         ]
@@ -56,17 +60,22 @@ const Overview = () => {
     return ( 
         <main className="p-8">
             
-            <header className="stats flex  container space-x-8">
-                <StatsCard title="Members" stats="1200" className="w-1/4"/>
-                <StatsCard title="Active Members" stats="560" className="w-1/4"/>
-                <StatsCard title="Events" stats="5" className="w-1/4"/>
-                <StatsCard title="Projects" stats="5" className="w-1/4"/>
+            {/* the cards at the top */}
+            <header className="stats container md:flex  md:space-x-8 ">
+                <StatsCard title="Members" stats="1200" className=""/>
+                <StatsCard title="Active Members" stats="560" className=""/>
+                <StatsCard title="Events" stats="5" className=""/>
+                <StatsCard title="Projects" stats="5" className=""/>
             </header>
-            <section className=" my-8 container flex rounded-lg overflow-hidden ">
-                <div className="chart bg-white w-3/4" >
+
+            {/* the chart and the stats cards section */}
+            <section className=" my-8 container divide-x-0 md:divide-x-2 divide-y-2 md:divide-y-0 md:flex rounded-lg overflow-hidden ">
+                {/* the chart */}
+                <div className="chart bg-white  md:w-3/4" >
                     <ReactEcharts option={option}  />
                 </div>
-                <aside className=" w-1/4  border-l-2">
+                {/* the stats cards */}
+                <aside className="  md:flex-col md:w-1/4 ">
                     <div className="inline-card bg-white text-center border-b-2 py-4">
                         <p className="stats-title">Active members</p>
                         <h2 className="stats-number text-2xl font-bold ">500</h2>
@@ -89,10 +98,13 @@ const Overview = () => {
                     </div>
                 </aside>
             </section>
-            <section className="tables container flex  gap-6">
-                <div className="basic-table bg-white w-1/2 rounded-lg">
-                    <div className="table-head flex justify-between p-4 items-center">
-                            <h2 className="text-2xl font-bold">Last events</h2>
+
+            {/* the tables section */}
+            <section className="tables container  md:flex  gap-6">
+                {/* the last events table */}
+                <div className="basic-table bg-white md:w-1/2 mb-8 md:mb-0 rounded-lg">
+                    <div className="table-head mb-3 flex justify-between p-4 items-center">
+                            <h2 className="text-xl md:text-2xl font-bold">Last events</h2>
                         <Link className="all-link" href="#">
                         <p className="text-sm font-semibold ">View all</p>
                         </Link>
@@ -114,9 +126,10 @@ const Overview = () => {
                         <p className=" text-sm font-semibold  text-gray-300 ">pending</p>
                     </div>
                 </div>
-                <div className="basic-table bg-white w-1/2 rounded-lg">
-                    <div className="table-head flex justify-between  items-center p-4">
-                        <h2 className="text-2xl font-bold">Members Leaderboard</h2>
+                {/* the members leaderboard table */}
+                <div className="basic-table bg-white md:w-1/2 rounded-lg">
+                    <div className="table-head mb-3 flex justify-between  items-center p-4">
+                        <h2 className=" text-xl md:text-2xl font-bold">Members Leaderboard</h2>
                         <Link className="all-link" href="#">
                         <p className="text-sm font-semibold ">View all</p>
                         </Link>
@@ -139,7 +152,7 @@ const Overview = () => {
                     </div>
                 </div>
             </section>
-                
+
         </main>
     );
 }
