@@ -15,11 +15,11 @@ const LogIn = () => {
             <Image className="w-[52vw] h-[75vh]" src={Weird_thing} />
         </div>
         <div className="pt-10 items-center gap-48 flex justify-center z-[1]">  
-            <div className=" w-72  z-30 h-20">
+            <div className=" w-72  z-30 h-25">
                 <Image src={GDGlogo}/>
             </div>
-            <div className=" w-72 h-20 z-30 ">
-                <Image src={WTMlogo}/>
+            <div className=" w-72 h-20 z-30 pt-2">
+                <Image className="w-68 h-16" src={WTMlogo}/>
             </div>
         </div>
         {/*The FORM*/}
