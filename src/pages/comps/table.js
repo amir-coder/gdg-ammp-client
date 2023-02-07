@@ -1,40 +1,45 @@
 import React, { useState } from 'react';
 
 const Table = ({ data }) => {
-    const [sortedData, setSortedData] = useState(data);
-    const [filterTerm, setFilterTerm] = useState('');
-  
-    const handleSort = (column) => {
-      const sorted = [...sortedData].sort((a, b) => {
-        if (a[column] < b[column]) return -1;
-        if (a[column] > b[column]) return 1;
-        return 0;
-      });
-      setSortedData(sorted);
-    };
-  
-    const handleFilter = (e) => {
-      setFilterTerm(e.target.value);
-    };
-  
-    const filteredData = sortedData.filter((row) =>
-      row.Members.toLowerCase().includes(filterTerm.toLowerCase())
-    );
-  
-    return (
-      <>
-        <div className="mb-2">
-            <button className="absolute right-122 top-37 text-sm font-medium text-gray-dark hover:text-white hover:bg-gray-dark p-2"
-            onClick={() => sortedData}
-            >
-            Sort
-        </button>
-        <button
-            className="absolute right-32 top-37 text-sm font-medium text-gray-dark hover:text-white hover:bg-gray-dark p-2"
-        >
-            Filter
-        </button>
-        </div>
+        const [sortedData, setSortedData] = useState(data);
+        const [filterTerm, setFilterTerm] = useState('');
+        
+        const handleSort = (column) => {
+          const sorted = [...sortedData].sort((a, b) => {
+            if (a[column] < b[column]) return -1;
+            if (a[column] > b[column]) return 1;
+            return 0;
+          });
+          setSortedData(sorted);
+        };
+        
+        const handleFilter = (e) => {
+          setFilterTerm(e.target.value);
+        };
+        
+        const filteredData = sortedData.filter((row) =>
+          row.Members.toLowerCase().includes(filterTerm.toLowerCase())
+        );
+        
+        return (
+          <>
+            <div className="mb-2">
+              <button
+                className="absolute right-122 top-37 text-sm font-medium text-gray-dark hover:text-white hover:bg-gray-dark p-2"
+                onClick={() => handleSort('Members')}
+              >
+                Sort
+              </button>
+              <input
+                className="absolute right-32 top-37 text-sm font-medium text-gray-dark hover:text-white hover:bg-gray-dark p-2"
+                value={filterTerm}
+                onChange={handleFilter}
+                placeholder="Filter"
+              />
+            </div>
+            {filteredData.map((row) => {
+              // Render the row data
+            })}
         <table className="table-auto w-full text-left border-t-2 border-gray-300 rounded-lg bg-white">
           <thead>
             <tr className="bg-gray-800 text-white">
