@@ -64,7 +64,7 @@ const chartData= {
                 { name: "IWD", status: "Done" },
                 { name: "Pending", status: "pending" }
             ]}
-            viewAllHref="#"
+            viewAllHref="/events"
             />
             <BoardTable
             title="Members Leaderboard"
