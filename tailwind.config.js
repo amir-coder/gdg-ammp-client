@@ -1,4 +1,5 @@
 // tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     purge: {
         content: [
@@ -20,6 +21,7 @@ module.exports = {
                 'colortext': '#A4A6B3',
                 'hovertext': '#DDE2FF',
                 'BorderColor': '#DFE0EB',
+                'loginbackgrouned': '#2148C0',
             }
         }
     },
