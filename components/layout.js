@@ -15,8 +15,9 @@ import Image from "next/image";
 function Layout({ children }) {
     return (
         <div className="flex">
-            <navbar>
-                <div className="p-6 w-1/2 h-screen bg-GrayF z-20 sticky fixed top-0 -left-96 lg:left-0 lg:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+        <aside>
+        <navbar>
+                <div className="p-6 h-screen bg-GrayF z-20 md:sticky fixed top-0 -left-96 lg:left-0 w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
                     <div className="flex flex-col justify-start item-center">
                         <div className="flex flex-col justify-center items-center">
                             <Image
@@ -98,7 +99,8 @@ function Layout({ children }) {
                         </div>
                     </div>
                 </div>
-            </navbar>
+        </navbar>
+        </aside>
             <div className='flex-1'>{children}</div>
         </div >
     );
