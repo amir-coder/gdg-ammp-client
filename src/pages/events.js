@@ -104,6 +104,48 @@ const Events = () => {
   // This is a hook that controls the modal state
   const [modalOpen, setModalOpen] = useState(false);
 
+  // handle the modal form change
+  // start by creating an array of objects that will contain the form data
+  const [formData, setFormData] = useState({
+    eventTitle: "",
+    eventDescr: "",
+    eventLink: "",
+    eventSrc: "",
+    eventAlt: "",
+  });
+
+  // handle the form change
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name, value)
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+  };
+
+  // handle the form submit
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // add the new event to the events array and close the modal
+    // verify that the form is not empty
+    if (
+      formData.eventTitle === "" ||
+      formData.eventDescr === "" ||
+      formData.eventLink === "" ||
+      formData.eventSrc === "" ||
+      formData.eventAlt === ""
+    ) {
+      // alert the user that the form is empty
+      alert("Please fill in all the fields");
+      return;
+    }
+
+
+    events.push(formData);
+    setModalOpen(false);
+  };
+
+
+
   return (
     <main className="main-events p-8 flex-col justify-center ">
       <button
@@ -124,7 +166,7 @@ const Events = () => {
               <div className="mb-4">
                 <label
                   className="block text-gray-700 font-medium mb-2"
-                  for="eventName"
+                  hmtlfor="eventName"
                 >
                   Event Name
                 </label>
@@ -133,12 +175,16 @@ const Events = () => {
                   id="eventName"
                   type="text"
                   placeholder="Event Name"
+                  onChange={handleFormChange}
+                  name="eventTitle"
+                  value={formData.eventTitle}
+                  required
                 />
               </div>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 font-medium mb-2"
-                  for="eventDescription"
+                  hmtlfor="eventDescription"
                 >
                   Event Description
                 </label>
@@ -146,12 +192,16 @@ const Events = () => {
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="eventDescription"
                   placeholder="Event Description"
+                  onChange={handleFormChange}
+                  name="eventDescr"
+                  value={formData.eventDescr}
+                  required
                 />
               </div>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 font-medium mb-2"
-                  for="eventImgSrc"
+                  hmtlfor="eventImgSrc"
                 >
                   Event Image Source
                 </label>
@@ -160,12 +210,16 @@ const Events = () => {
                   id="eventImgSrc"
                   type="text"
                   placeholder="Event Image Source"
+                  onChange={handleFormChange}
+                  name="eventSrc"
+                  value={formData.eventSrc}
+                  required
                 />
               </div>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 font-medium mb-2"
-                  for="eventImgAlt"
+                  hmtlfor="eventImgAlt"
                 >
                   Event Image Alt
                 </label>
@@ -175,12 +229,16 @@ const Events = () => {
                   id="eventImgAlt"
                   type="text"
                   placeholder="Event Image Alt"
+                  onChange={handleFormChange}
+                  name="eventAlt"
+                  value={formData.eventAlt}
+                  
                 />
               </div>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 font-medium mb-2"
-                  for="eventLink"
+                  hmtlfor="eventLink"
                 >
                   Event Link
                 </label>
@@ -189,6 +247,10 @@ const Events = () => {
                   id="eventLink"
                   type="text"
                   placeholder="Event Link"
+                  onChange={handleFormChange}
+                  name="eventLink"
+                  value={formData.eventLink}
+                  required
                 />
               </div>
               <div className="flex items-center justify-between">
@@ -201,7 +263,8 @@ const Events = () => {
                 </button>
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="button"
+                  type="submit"
+                  onClick={handleFormSubmit}
                 >
                   Add Event
                 </button>
