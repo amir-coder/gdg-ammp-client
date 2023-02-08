@@ -10,7 +10,7 @@ const Members = () => {
         {Members: "cheima", IDK:"29374",JoiningDate:"May9,2018",Department:"events"},
         {Members: "amani", IDK:"29374",JoiningDate:"May9,2019",Department:"dev"},
         {Members: "ali", IDK:"243522",JoiningDate:"March9,2019",Department:"dev"},
-        {Members: "ali", IDK:"29374",JoiningDate:"May19,2019",Department:"dev"}
+        {Members: "ali", IDK:"29374",JoiningDate:"May19,2019",Department:"ui/ux"}
 
 
     ])

@@ -33,22 +33,19 @@ const Table = ({ data }) => {
     row.Members.toLowerCase().includes(filterTerm.toLowerCase())
   )
   const [showInput, setShowInput] = useState(false)
- // Idk why this is not working  
+ //
   const departmentColors = {
-    'Events': '#29CC97',
-    'dev': '#FEC400',
-    'ui/ux': '#F12B2C'
+    'events': 'green-500',
+    'dev': 'yellow-500',
+    'ui/ux': 'red-500'
   }
   
   const getDepartmentColor = (department) => {
-    return departmentColors[department] || '#F12B2C';
-  }
-  
-  const TableRow = ({ row }) => {
-    const departmentColor = getDepartmentColor(row.Department);
+    return departmentColors[department] || 'black-500';
   }
 //
 const [isOpen, setIsOpen] = useState(false);
+
 
   return (
     <>
@@ -114,8 +111,8 @@ const [isOpen, setIsOpen] = useState(false);
             </tr>
           </thead>
           <tbody className='divide-y devide-gray-200'>
-            {filteredData.map((row) => (
-              <tr key={row.id} className="bg-white hover:bg-gray-100">
+            {filteredData.map((row,index) => (
+              <tr key={row.id} key1={index} className="bg-white hover:bg-gray-100">
                 <td className="p-4 flex flex-row border-0 ">
                     <img
                     src={row.ProfilePicture}
@@ -127,7 +124,7 @@ const [isOpen, setIsOpen] = useState(false);
                 <td className="border-0 px-4 py-2 text-center">{row.IDK}</td>
                 <td className="border-0 px-4 py-2 text-center">{row.JoiningDate}</td>
                 <td className='place-content-center '>
-                <div className={`border-0 inset-0 bg-red-500 rounded-full py-1 px-2 max-w-max text-white text-xs font-medium tracking-wide uppercase text-center `}>{row.Department}</div>
+                <div className={`border-0 inset-0 bg-${getDepartmentColor(row.Department)} rounded-full py-1 px-2 max-w-max text-white text-xs font-medium tracking-wide uppercase text-center `}>{row.Department}</div>
                 </td>
 
               </tr>
