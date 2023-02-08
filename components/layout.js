@@ -90,7 +90,10 @@ function Layout({ children }) {
                                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 border border-gray-200  hover:bg-transparent p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                                     <MdOutlineLogout className="text-2xl text-colortext group-hover:text-hovertext " />
                                     <h3 className="text-base text-colortext group-hover:text-hovertext font-semibold ">
-                                        Logout
+                                        
+                                    <Link href='/login'>
+                                            Logout
+                                    </Link>
                                     </h3>
                                 </div>
                             </div>
