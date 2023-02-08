@@ -78,7 +78,7 @@ body {
 
 
 .events-container img {
-
+  /* max-width: 450px; */
   opacity: 0;
   transform: translateY(-100%);
   transition: transform .3s, opacity .3s ease-in-out;

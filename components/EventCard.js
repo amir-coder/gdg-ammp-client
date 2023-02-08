@@ -2,14 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 const EventCard = ({eventTitle,eventDescr,eventLink,eventSrc,eventAlt,isLoaded}) => {
     return ( 
-        <div className="event-card w-96 relative overflow-hidden rounded-lg">
+        <div className="event-card  relative overflow-hidden rounded-lg">
             <div className="event-card__img ">
-                <Image 
+                <img
                     src={eventSrc}
                     alt={eventAlt}
-                    width={400}
-                    height={230}
-                    loading="lazy"
+                    className="w-full h-full object-cover"                   
                 />
             </div>
             {isLoaded &&
