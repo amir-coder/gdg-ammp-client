@@ -1,5 +1,5 @@
 
-import Layout from '../../components/layout'
+import Layout from '../../components/layout';
 import StatsCard from "components/StatsCard";
 import LineChart from "components/LineChart";
 import BoardTable from "components/BoardTable";

@@ -48,7 +48,7 @@ function Layout({ children }) {
                             <div className="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-GrayC p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                                 <MdSupervisedUserCircle className="text-2xl text-colortext group-hover:text-hovertext " />
                                 <h3 className="text-base text-colortext group-hover:text-hovertext font-semibold ">
-                                    <Link href='/Members'>
+                                    <Link href='/members'>
                                         Members
                                     </Link>
                                 </h3>

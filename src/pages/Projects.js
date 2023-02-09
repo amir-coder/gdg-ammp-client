@@ -1,5 +1,5 @@
 //Projects
-
+import Layout from "components/layout";
 export default function Projects() {
     return (
         <div className='flex h-full flex-col justify-center items-center'>
@@ -7,3 +7,9 @@ export default function Projects() {
         </div>
     );
 }
+
+Projects.getLayout = function getLayout(page) {
+    return (
+        <Layout>{page}</Layout>
+    )
+  }
