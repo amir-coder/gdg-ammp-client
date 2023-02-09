@@ -1,4 +1,5 @@
 import EventCard from "components/EventCard";
+import Layout from '../../components/layout';
 import { useEffect, useState } from "react";
 
 const Events = () => {
@@ -290,5 +291,11 @@ const Events = () => {
     </main>
   );
 };
+
+Events.getLayout = function getLayout(page) {
+  return (
+      <Layout>{page}</Layout>
+  )
+}
 
 export default Events;
