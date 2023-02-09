@@ -15,7 +15,7 @@ const chartData= {
         <main className="p-8">
             
             {/* the cards at the top */}
-            <header className="stats container md:flex  md:space-x-8 ">
+            <header className="stats container md:flex  md:space-x-8 min-w-full ">
                 <StatsCard title="Members" stats="1200" className=""/>
                 <StatsCard title="Active Members" stats="560" className=""/>
                 <StatsCard title="Events" stats="5" className=""/>
@@ -23,7 +23,7 @@ const chartData= {
             </header>
 
             {/* the chart and the stats cards section */}
-            <section className=" my-8 container divide-x-0 md:divide-x-2 divide-y-2 md:divide-y-0 md:flex rounded-lg overflow-hidden ">
+            <section className=" my-8 container divide-x-0 md:divide-x-2 divide-y-2 md:divide-y-0 md:flex rounded-lg overflow-hidden min-w-full">
                 {/* the chart */}
                 <div className="chart bg-white  md:w-3/4" >
                     {/* <ReactEcharts option={option}  /> */}
@@ -55,7 +55,7 @@ const chartData= {
             </section>
 
             {/* the tables section */}
-            <section className="tables container  md:flex  gap-6">
+            <section className="tables container  md:flex  gap-6 min-w-full">
             <BoardTable
             title="Last events"
             data={[
@@ -64,7 +64,7 @@ const chartData= {
                 { name: "IWD", status: "Done" },
                 { name: "Pending", status: "pending" }
             ]}
-            viewAllHref="#"
+            viewAllHref="/events"
             />
             <BoardTable
             title="Members Leaderboard"

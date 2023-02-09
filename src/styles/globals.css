@@ -85,3 +85,55 @@ body {
 .all-link:hover{
   color: var(--blue)
 }
+
+.main-events button:last-of-type{
+  background-color: rgba(80, 126, 191, 1);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+.events-container img {
+  /* max-width: 450px; */
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform .3s, opacity .3s ease-in-out;
+
+}
+
+
+.event-card__cta--link{
+  display: block;
+  background-color: rgba(80, 126, 191, 1);
+  color: #fff;
+}
+
+.event-card__cta--link:hover{
+  background-color: rgba(80, 126, 191, 0.8);
+  transform: scale(1.02);
+  color: #fff;
+}
+
+.event-card__content{
+  border-color: var(--purple-blue);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease-in-out;
+}
+
+
+.event-card:hover{
+  cursor: pointer;
+}
+
+.event-card:hover .event-card__content{
+  opacity: 1; 
+  transform: translateY(0);
+}
+
+
