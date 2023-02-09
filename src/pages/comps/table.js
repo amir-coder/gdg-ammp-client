@@ -29,7 +29,7 @@ const Table = ({ data }) => {
     setFilterTerm(e.target.value)
   }
   
-  const filteredData = sortedData.filter((row) =>
+  const filteredData = sortedData?.filter((row) =>
     row.Members.toLowerCase().includes(filterTerm.toLowerCase())
   )
   const [showInput, setShowInput] = useState(false)
@@ -111,7 +111,7 @@ const [isOpen, setIsOpen] = useState(false);
             </tr>
           </thead>
           <tbody className='divide-y devide-gray-200'>
-            {filteredData.map((row,index) => (
+            {filteredData?.map((row,index) => (
               <tr key={row.id} key1={index} className="bg-white hover:bg-gray-100">
                 <td className="p-4 flex flex-row border-0 ">
                     <img
