@@ -23,3 +23,117 @@
     border-radius: 100%;
     background: #244BC5;
 }
+
+:root{
+  --very-light-blue:rgba(247, 248, 252, 1);
+  --light-text:rgba(159, 162, 180, 1);
+  --dark-text:rgba(37, 39, 51, 1);
+  --purple-blue:rgba(55, 81, 255, 1);
+  --blue:rgba(33, 72, 192, 1);
+  --light-gray:rgba(223, 224, 235, 1)
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  background-color: var(--very-light-blue);
+}
+
+
+.stats-card{
+  border: 1px solid #DFE0EB;
+  transition: all 0.3s ease-in-out;
+}
+.stats-title{
+  color: var(--light-text);
+  transition: all 0.3s ease-in-out;
+
+}
+.stats-number{
+  color: var(--dark-text);
+  transition: all 0.3s ease-in-out;
+
+}
+
+.stats-card:hover{
+  border-color: var(--purple-blue);
+  cursor: pointer;
+}
+.stats-card:hover .stats-title{
+  color: var(--blue);
+}
+.stats-card:hover .stats-number{
+  color: var(--purple-blue);
+}
+
+
+.echarts-for-react{
+  height: 432px !important;
+  padding: 24px !important;
+} 
+
+
+
+.all-link{
+  color: var(--purple-blue)
+}
+.all-link:hover{
+  color: var(--blue)
+}
+
+.main-events button:last-of-type{
+  background-color: rgba(80, 126, 191, 1);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+.events-container img {
+  /* max-width: 450px; */
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform .3s, opacity .3s ease-in-out;
+
+}
+
+
+.event-card__cta--link{
+  display: block;
+  background-color: rgba(80, 126, 191, 1);
+  color: #fff;
+}
+
+.event-card__cta--link:hover{
+  background-color: rgba(80, 126, 191, 0.8);
+  transform: scale(1.02);
+  color: #fff;
+}
+
+.event-card__content{
+  border-color: var(--purple-blue);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease-in-out;
+}
+
+
+.event-card:hover{
+  cursor: pointer;
+}
+
+.event-card:hover .event-card__content{
+  opacity: 1; 
+  transform: translateY(0);
+}
+
+
